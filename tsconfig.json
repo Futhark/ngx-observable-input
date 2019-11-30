@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "declaration": true,
+        "outDir": "./lib",
+        "strict": false,
+        "lib": [
+            "es2015",
+            "dom"
+        ]
+    },
+    "include": [
+        "index.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ],
+    "paths": {
+        "@angular/core": ["node_modules/@angular/core"],
+        "rxjs/*": ["node_modules/rxjs/*"]
+    },
+    "angularCompilerOptions": { "strictMetadataEmit": true }
+}

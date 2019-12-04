@@ -1,6 +1,6 @@
 {
     "name": "ngx-observable-input",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "description": "Small library that provides ObservableInput decorator to use angular component input attributes as RxJS Observables",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
@@ -25,7 +25,6 @@
     },
     "homepage": "https://github.com/Futhark/ngx-observable-input#readme",
     "devDependencies": {
-        "@angular/core": "6",
         "rxjs": "^6",
         "typescript": "^3.7.2"
     }

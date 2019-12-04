@@ -1,4 +1,3 @@
-import { Input as decorateAsInput } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 
 export function ObservableInput(attributeKey?: string) {
@@ -6,8 +5,6 @@ export function ObservableInput(attributeKey?: string) {
     const subjectSymbolObservable = Symbol();
 
     return (target: any, key: PropertyKey) => {
-        decorateAsInput(attributeKey)(target, key);
-
         Object.defineProperty(target, key, {
             set: function (value) {
                 if (!this[subjectSymbol]) {

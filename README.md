@@ -2,9 +2,15 @@
 
 This small repository provides ObservableInput decorator to use Angular component input attributes as RxJS Observables.
 
+Angular AOT compiler support from version 2.0.0
+
+## Changelog
+
+Look for changes in CHANGELOG.md file.
+
 # Why
 
-There are many threads on Angular developer forums about treating input as observable streams. Instead of manually checking the changes in ngOnChanges hook this library provides a simple replacement for `@Input()` decorator that does all the magic behind the scenes.
+There are many threads on Angular developer forums about treating input as observable streams. Instead of manually checking the changes in ngOnChanges hook this library provides a simple addition to `@Input()` decorator that does all the magic behind the scenes.
 
 # Usage
 
@@ -31,8 +37,7 @@ import { Observable } from "rxjs";
     template: `<img [src]="url$ | async" />`
 })
 export class GalleryComponent {
-    @ObservableInput("url") public url$: Observable<string>;
-
+    @ObservableInput() @Input("url") public url$: Observable<string>;
     ...
 }
 ```
@@ -41,26 +46,28 @@ Simple as that!
 
 ## Usage recommendation / naming convention
 
-While the decorator can be used without the parameter it in most cases shouldn't. The parameter is used as an external attribute name and if omited will use the name of the property that it decorates (same bahavior as `@Input` decorator). It is okay for non-observable `@Input` but one should stick to the guidelines of observable naming connvetion inside components: https://angular.io/guide/rx-library#naming-conventions-for-observables
+The `@Input` decorator is often used without the parameter, but when working with `@ObservableInput` it in most cases shouldn't. The parameter is used as an attribute name in HTML templates and if omited will use the name of the property that it decorates. It is okay for non-observable `@Input` but one should stick to the guidelines of observable naming convention: https://angular.io/guide/rx-library#naming-conventions-for-observables
 
-Using this convention without `@ObservableInput` parameter will end in weird attribute name for Angular component. For example:
+Using this convention without `@Input` parameter will end in non-standard attribute name for Angular component. For example:
 
 ### good:
 ```ts
-@ObservableInput("url") public url$: Observable<string>;
+@ObservableInput() @Input("url") public url$: Observable<string>;
 ```
+where we have `url` attribute:
 ```html
-<image-item [url]="currentImageUrl"></image-item>
+<image-item url="{{ currentImageUrl }}"></image-item>
 ```
 
 is **much more** preferrable than:
 
 ### bad:
 ```ts
-@ObservableInput() public url$: Observable<string>;
+@ObservableInput() @Input() public url$: Observable<string>;
 ```
+where we have non-intuitive `url$` attribute
 ```html
-<image-item [url$]="currentImageUrl"></image-item>
+<image-item url$="{{ currentImageUrl }}"></image-item>
 ```
 
-since `url$` is not intuitive name for html-style tag property.
+Using `@Input` parameter will cause TSLint warnings with `no-input-rename` rule enabled.

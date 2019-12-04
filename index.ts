@@ -1,6 +1,6 @@
 import { BehaviorSubject } from "rxjs";
 
-export function ObservableInput(attributeKey?: string) {
+export function ObservableInput() {
     const subjectSymbol = Symbol();
     const subjectSymbolObservable = Symbol();
 

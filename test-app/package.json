@@ -1,38 +1,38 @@
 {
-    "name": "test-app",
-    "version": "0.0.0",
-    "scripts": {
-        "ng": "ng",
-        "start": "ng serve",
-        "build": "ng build",
-        "lint": "ng lint"
-    },
-    "private": true,
-    "dependencies": {
-        "@angular/animations": "~8.2.14",
-        "@angular/common": "~8.2.14",
-        "@angular/compiler": "~8.2.14",
-        "@angular/core": "~8.2.14",
-        "@angular/forms": "~8.2.14",
-        "@angular/platform-browser": "~8.2.14",
-        "@angular/platform-browser-dynamic": "~8.2.14",
-        "@angular/router": "~8.2.14",
-        "ngx-observable-input": "file://..",
-        "rxjs": "~6.4.0",
-        "tslib": "^1.10.0",
-        "zone.js": "~0.9.1"
-    },
-    "devDependencies": {
-        "@angular-devkit/build-angular": "~0.803.19",
-        "@angular/cli": "~8.3.19",
-        "@angular/compiler-cli": "~8.2.14",
-        "@angular/language-service": "~8.2.14",
-        "@types/node": "~8.9.4",
-        "@types/jasmine": "~3.3.8",
-        "@types/jasminewd2": "~2.0.3",
-        "codelyzer": "^5.0.0",
-        "ts-node": "~7.0.0",
-        "tslint": "~5.15.0",
-        "typescript": "~3.5.3"
-    }
+  "name": "test-app",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "lint": "ng lint"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~9.0.7",
+    "@angular/common": "~9.0.7",
+    "@angular/compiler": "~9.0.7",
+    "@angular/core": "~9.0.7",
+    "@angular/forms": "~9.0.7",
+    "@angular/platform-browser": "~9.0.7",
+    "@angular/platform-browser-dynamic": "~9.0.7",
+    "@angular/router": "~9.0.7",
+    "ngx-observable-input": "file://..",
+    "rxjs": "~6.5.4",
+    "tslib": "^1.10.0",
+    "zone.js": "~0.10.2"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.900.7",
+    "@angular/cli": "~9.0.7",
+    "@angular/compiler-cli": "~9.0.7",
+    "@angular/language-service": "~9.0.7",
+    "@types/jasmine": "~3.3.8",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.11.1",
+    "codelyzer": "^5.1.2",
+    "ts-node": "~7.0.0",
+    "tslint": "~5.15.0",
+    "typescript": "~3.7.5"
+  }
 }

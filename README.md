@@ -44,6 +44,10 @@ export class GalleryComponent {
 
 Simple as that!
 
+## Default value
+
+Since version 3.0.0 the behavior of unused (not set) input attributes has changed. Previously the observable was `undefined`. Now the observable is initiated by an `defaultValue` argument provided to decorator: `@ObservableInput(defaultValue: any)`. This allows developer to safely subscribe to such observables without null-checking first.
+
 ## Usage recommendation / naming convention
 
 The `@Input` decorator is often used without the parameter, but when working with `@ObservableInput` it in most cases shouldn't. The parameter is used as an attribute name in HTML templates and if omited will use the name of the property that it decorates. It is okay for non-observable `@Input` but one should stick to the guidelines of observable naming convention: https://angular.io/guide/rx-library#naming-conventions-for-observables

@@ -1,6 +1,6 @@
 {
     "name": "ngx-observable-input",
-    "version": "3.0.0",
+    "version": "3.0.1",
     "description": "Small library that provides ObservableInput decorator to use angular component input attributes as RxJS Observables",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",

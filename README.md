@@ -46,7 +46,7 @@ Simple as that!
 
 ## Default value
 
-Since version 3.0.0 the behavior of unused (not set) input attributes has changed. Previously the observable was `undefined`. Now the observable is initiated by an `defaultValue` argument provided to decorator: `@ObservableInput(defaultValue: any)`. This allows developer to safely subscribe to such observables without null-checking first.
+Since version 3.0.0 the behavior of unused (not set) input attributes has changed. Previously the observable was `undefined`. Now the observable is initiated by a `defaultValue` argument provided to the decorator: `@ObservableInput(defaultValue: any)`. This allows developer to safely subscribe to such observables without null-checking first.
 
 ## Usage recommendation / naming convention
 

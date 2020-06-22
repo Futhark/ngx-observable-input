@@ -10,8 +10,10 @@ import { map, share } from "rxjs/operators";
 export class AppComponent {
     private counterValue = 0;
     public counterValue$: Observable<number>;
+    public reverseCounterValue$: Observable<number>;
 
     constructor() {
         this.counterValue$ = interval(1000).pipe(map(() => this.counterValue++), share());
+        this.reverseCounterValue$ = this.counterValue$.pipe(map((value) => 1000 - value));
     }
 }

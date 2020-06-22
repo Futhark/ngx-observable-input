@@ -1,3 +1,7 @@
 <app-test-component [bazinga]="counterValue$ | async"></app-test-component>
 
 Standard: {{ counterValue$ | async }}
+<br />
+Second instance of same component with different stream:
+<br />
+<app-test-component [bazinga]="reverseCounterValue$ | async"></app-test-component>

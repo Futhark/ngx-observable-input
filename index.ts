@@ -8,7 +8,7 @@ export function ObservableInput(defaultValue?: any) {
         Object.defineProperty(target, key, {
             set: function (value) {
                 if (!this[subjectSymbol]) {
-                    this[subjectSymbol] = new BehaviorSubject(target[key]);
+                    this[subjectSymbol] = new BehaviorSubject(value);
                     this[subjectSymbolObservable] = this[subjectSymbol].asObservable();
                 }
 

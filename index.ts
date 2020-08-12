@@ -4,7 +4,7 @@ export function ObservableInput(defaultValue?: any) {
     const subjectSymbol = Symbol();
     const subjectSymbolObservable = Symbol();
 
-    return (target: any, key: PropertyKey) => {
+    return function (target: any, key: PropertyKey) {
         Object.defineProperty(target, key, {
             set: function (value) {
                 if (!this[subjectSymbol]) {

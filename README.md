@@ -75,3 +75,11 @@ where we have non-intuitive `url$` attribute
 ```
 
 Using `@Input` parameter will cause TSLint warnings with `no-input-rename` rule enabled.
+
+# Known caveats and issues
+## *strictTemplates* and *fullTemplateTypeCheck* with Ivy
+If you are using Ivy compiler (Angular 9+) it is possible to enable [*strictTemplates*](https://angular.io/guide/template-typecheck) checking in **tsconfig.ts** file. This will cause errors since the compiler interprets inputs decorated with `@ObservableInput` as an `Observable<T>` instead of `T`. For now the only known way is to use *strictInputTypes* compiler option:
+```
+"strictInputTypes": false
+```
+This will disable only inputs type validation and will leave all other checks enabled.

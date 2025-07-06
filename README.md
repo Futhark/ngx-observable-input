@@ -1,3 +1,23 @@
+> ⚠️ **This project is archived**  
+> This repository is no longer maintained.  
+> 
+> Since Angular 16, you can use native `@Input` transformation with Observables:  
+> 
+> ```ts 
+> export function toInputObservable<T>() {
+>   const subject = new BehaviorSubject<T | undefined>(undefined);
+>   return (value: T): Observable<T> => {
+>     subject.next(value);
+>     return subject.asObservable();
+>   };
+> }
+> 
+> @Input({ transform: toInputObservable<string>() })
+> readonly myInput$!: Observable<string>;
+> ```  
+> 
+> This allows most use cases of this library to be implemented natively in Angular now.
+
 # ngx-observable-input
 
 This small repository provides ObservableInput decorator to use Angular component input attributes as RxJS Observables.
